@@ -12,6 +12,11 @@ try:
 
     select = Select(browser.find_element_by_tag_name("select"))
 
+    obj = browser.find_element_by_id("answer")
+    browser.execute_script("return arguments[0].scrollIntoView(true);", obj)
+    obj.send_keys(y)
+
+
     select.select_by_visible_text(str(int(browser.find_element_by_id("num1").text) + int(browser.find_element_by_id("num2").text)))
 
     button = browser.find_element_by_css_selector("button.btn")
