@@ -12,6 +12,7 @@ try:
     browser.get("http://suninjuly.github.io/get_attribute.html")
 
     x_element = browser.find_element_by_id("treasure").get_attribute("valuex")
+    print(x_element)
     y = calc(x_element)
 
     browser.find_element_by_id("answer").send_keys(y)
